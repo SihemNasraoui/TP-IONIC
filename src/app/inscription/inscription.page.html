@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <form [formGroup]="addForm">
+
+      <ion-item-group>
+        <ion-item-divider>
+          <ion-label>Informations</ion-label>
+        </ion-item-divider>
+
+        <ion-item-group>
+          <ion-item lines="full">
+            <ion-input formControlName="name" placeholder="Enter your Name">
+            </ion-input>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item lines="full">
+            <ion-input formControlName="email" placeholder="Enter your Email">
+            </ion-input>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item lines="full">
+            <ion-input formControlName="age" type="number" placeholder="Enter your Age">
+            </ion-input>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item lines="full">
+            <ion-input formControlName="salary" type="number" placeholder="Enter your Salary">
+            </ion-input>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+          <ion-item>
+              <ion-button color="primary" style="margin-top: 10px; "  [disabled]="addForm.invalid " (click)="addUser()">Sign Up</ion-button>
+          </ion-item>
+        </ion-item-group>
+      </ion-item-group>
+    </form>
+  </ion-list>
+</ion-content>

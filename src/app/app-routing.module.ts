@@ -9,12 +9,21 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  }
+    path: 'inscription',
+    loadChildren: () => import('./inscription/inscription.module').then( m => m.InscriptionPageModule)
+  },
+  {
+    path: 'affichage',
+    loadChildren: () => import('./affichage/affichage.module').then( m => m.AffichagePageModule)
+  },
+  {
+    path: 'user-details/:id',
+    loadChildren: () => import('./user-details/user-details.module').then( m => m.UserDetailsPageModule)
+  },
+
 ];
 
 @NgModule({

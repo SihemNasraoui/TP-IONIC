@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> List of users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <ion-list *ngIf="userService.getUsersList().length>0">
+      <ion-item *ngFor="let user of userService.getUsersList()" routerLink="/user-details/{{user.id}}">
+        <ion-label>{{user.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>

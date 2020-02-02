@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button icon-only (click)="onUpdate()">
+                <ion-icon name="create">
+                </ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>User</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content parallax-header no-bounce class="bg-modal">
+    <div class="main-content" text-wrap text-center>
+        <ion-list *ngIf="user && !isUpdate">
+            <ion-item>
+                <ion-label>Name :</ion-label>
+                <ion-icon name="person" size="small" slot="start"></ion-icon>
+                {{user.name}}
+            </ion-item>
+            <ion-item>
+                <ion-label> Age :</ion-label>
+                <ion-icon name="calendar" size="small" slot="start"></ion-icon>
+                {{user.age}}
+            </ion-item>
+            <ion-item>
+                <ion-label> Salary : </ion-label>
+                <ion-icon name="card" size="small" slot="start"></ion-icon>
+                {{user.salary}}
+            </ion-item>
+            <ion-item>
+                <ion-label>Email :</ion-label>
+                <ion-icon name="at" size="small" slot="start"></ion-icon>
+                {{user.email}}
+            </ion-item>
+        </ion-list>
+        <ion-list *ngIf="isUpdate && user">
+            <form [formGroup]="Updform">
+                <ion-item>
+                    <ion-input formControlName="name" placeholder="Enter your Name">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input formControlName="age" type="number" placeholder="Enter your Age">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input formControlName="salary" type="number" placeholder="Enter your Salary">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-input formControlName="email" placeholder="Enter your Email">
+                    </ion-input>
+                </ion-item>
+
+
+                <ion-button style="margin-top: 20px; " color="success" (click)="updateUser()">Update User</ion-button>
+
+
+            </form>
+
+
+        </ion-list>
+        <ion-button style="margin-top: 20px; " color="danger" (click)="deleteUser()">Delete User</ion-button>
+    </div>
+</ion-content>

@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 
-import { ListPage } from './list.page';
+import { IonicModule } from '@ionic/angular';
+
+import { AffichagePageRoutingModule } from './affichage-routing.module';
+
+import { AffichagePage } from './affichage.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: ListPage
-      }
-    ])
+    AffichagePageRoutingModule
   ],
-  declarations: [ListPage]
+  declarations: [AffichagePage]
 })
-export class ListPageModule {}
+export class AffichagePageModule {}
